@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import ProfilePage from "./components/ProfilePage";
+import avatarImage from "./assets/avatar.jfif";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const user = {
+    name: "Fatema Ahmadi",
+    username: "@fatema_ahmadi",
+    avatarImage: avatarImage, // if you are using image later, we can replace this with avatarUrl
+    xp: 65,
+    lastActive: "Jan 2, 2025",
+    streakDays: 4,
+    longestStreak: 3,
+    recentBadgesText: "No badges earned yet.",
+  
+    personalInfo: {
+      Email: "fatema.ahmadi1384@gmail.com",
+      Gender: "FeMale",
+      Country: "Afghanistan",
+      "Province or State ": "Herat",
+      "Teaching Experience (in years)": "4",
+      "Date Of Birth": "7/13/05",
+      "Online Portfolio Link": "Open the Link",
+      "LinkedIn Link": "Open the Link",
+      Languages: "farsi, english, pashto",
+      Bio: "Modrator at MegaByte Services.",
+    },
+  
+    accountDetails: {
+      Role: "Moderator",
+      Status: "Active",
+      Verification: "Verified",
+    },
+  };
+  
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="page">
+      <ProfilePage user={user} />
+    </div>
+  );
 }
-
-export default App
